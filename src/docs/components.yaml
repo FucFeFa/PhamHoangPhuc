@@ -77,7 +77,55 @@ components:
                 nullable: true
                 default: null
                 description: The response data
-  
+    
+    error400:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: The response status
+                enum:
+                  - error
+              message:
+                type: string
+                description: Error message
+
+    error404:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: The response status
+                enum:
+                  - error
+              message:
+                type: string
+                description: Error message
+
+    error500:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: The response status
+                enum:
+                  - error
+              message:
+                type: string
+                description: Error message
+
   parameters:
     contactIdParam:
       name: id
